@@ -1,0 +1,55 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+import Image from 'next/image'
+import screenTmux from './screen-tmux.webp'
+
+export const meta = {
+  author: 'Jochen Stierberger',
+  date: '2023-05-14',
+  title: 'My favorite tools as a dev',
+  description:
+    'Developer productivity is a crucial aspect of software development, and there are several tools that can help you improve it. Tmux, Yabai, skhd, and LazyVim are some of the tools that I personally use on a day-to-day basis and fully recommend.',
+}
+
+export default (props) => <ArticleLayout meta={meta} {...props} />
+
+As a Software Developer, I know the importance of maximizing my time and being as productive as possible. I've always been on the lookout for ways to streamline my workflow and make the most of my time. Recently, I've discovered a set of software tools that have transformed the way I work. I've started using Tmux, Yabai, skhd, and LazyVim and they have made a world of difference in my productivity.
+
+## Yabai
+
+Yabai is a powerful tiling window manager for macOS that has gained popularity among software developers for its ability to increase productivity and streamline workflow. I mostly use it for two things:
+
+- Tiling window management: I usually have multiple windows per display open at the same time and rely on Yabai's binary space partitioning algorithm to automatically modifies my window layout.
+
+- Keyboard shortcuts: Yabai allows you to define keyboard shortcuts using skhd or any other suitable software you may prefer. I use this functionality everyday as it saves me from using the mouse when switching between different displays.
+
+Check out Josean's [walkthrough](https://www.josean.com/posts/yabai-setup) on how to set up yabai.
+
+## Skhd
+
+Skhd goes hand-in-hand with yabai and makes it super easy for me to jump between my monitors and even windows without using the mouse. I have a single key configured on my keyboard that acts as a hyper key on a press-and-hold. The Hyper key can normally be activated by pressing Shift+Control+Alt+Command simultaneously on macOS. Have a look at this excerpt of my skhd [dotfiles](https://github.com/heyjochen/dotfiles/blob/main/skhd/skhdrc) to see how easy it is to achieve this functionality:
+
+```markdown
+# focus monitor 1/2/3
+
+hyper - l : yabai -m display --focus 1
+hyper - u : yabai -m display --focus 2
+hyper - y : yabai -m display --focus 3
+
+# moves focus between windows in the current focused display
+
+hyper - m : yabai -m window --focus west
+hyper - n : yabai -m window --focus south
+hyper - e : yabai -m window --focus north
+hyper - i : yabai -m window --focus east
+```
+
+## Tmux
+
+I usually work in at least three terminals at the same time and my screen got cluttered fast. Since switching over to Tmux, I am finally able create multiple terminal sessions within a single terminal window and switch between them easily. This can be useful for running multiple commands or programs at the same time, or for separating different tasks into separate sessions.
+
+<figure>
+  <Image src={screenTmux} alt="" />
+  <figcaption style={{ borderRadius: '0%' }}>
+    Screenshot of my tmux environment when switching between different terminals
+  </figcaption>
+</figure>
