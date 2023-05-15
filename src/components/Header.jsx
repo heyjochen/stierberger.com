@@ -197,7 +197,7 @@ function ModeToggle() {
       className="group px-3 py-2 backdrop-blur transition"
       onClick={toggleMode}
     >
-      <SunIcon className="h-6 w-6 transition dark:hidden [@media(prefers-color-scheme:dark)]:fill-rose-50 [@media(prefers-color-scheme:dark)]:stroke-rose-500 [@media(prefers-color-scheme:dark)]:group-hover:fill-rose-50 [@media(prefers-color-scheme:dark)]:group-hover:stroke-rose-600" />
+      <SunIcon className="h-6 w-6 fill-zinc-100 stroke-zinc-500 transition group-hover:fill-zinc-200 group-hover:stroke-zinc-700 dark:hidden [@media(prefers-color-scheme:dark)]:fill-teal-50 [@media(prefers-color-scheme:dark)]:stroke-rose-500 [@media(prefers-color-scheme:dark)]:group-hover:fill-rose-50 [@media(prefers-color-scheme:dark)]:group-hover:stroke-rose-600" />
       <MoonIcon className="hidden h-6 w-6 fill-zinc-700 stroke-zinc-500 transition dark:block [@media(prefers-color-scheme:dark)]:group-hover:stroke-zinc-400 [@media_not_(prefers-color-scheme:dark)]:fill-rose-400/10 [@media_not_(prefers-color-scheme:dark)]:stroke-rose-500" />
     </button>
   )
